@@ -784,7 +784,7 @@ class TCTData {
 
         for(const effect of issueEffects) {
             osegEffects.push({
-                answerEffectType: "Issue",
+                answerEffectType: "TctIssue",
                 candidateId: -1,
                 issueId: effect.fields.issue,
                 stateId: -1,
