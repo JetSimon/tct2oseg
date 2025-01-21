@@ -101,6 +101,7 @@ function App() {
 
       <p>You will still need to get a logic.js file (blank ones are available in the OSEG editor), a blank style.css file, and most importantly if you do not have a map SVG you will need to find one and make sure that the paths in the map SVG line up with the abbreviations in the OSEG data.json.</p><p>This is very similar to TCT and if you know how to do a custom map in TCT you should be ok. If the mod you are trying to convert has a map in an existing TCT base scenario, the one already in the OSEG editor should work.</p>
       <p>You will also need to assign the running mates to the candidates in the OSEG editor. But they should all be defined.</p>
+      <p>You may need to rebalance your margins a bit. It has been found that multiplying all your answer effects by about 0.3-0.4 in the Bulk Tools section of the OSEG editor is a good starting point.</p>
     </div>
   )
 }
