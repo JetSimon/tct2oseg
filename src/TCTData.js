@@ -775,7 +775,7 @@ class TCTData {
         });
     }
 
-    answerEffectsAsOseg(answer) {
+    answerEffectsAsOseg(answer, playableCandidatePk) {
         const osegEffects = [];
 
         const issueEffects = this.getIssueScoreForAnswer(answer.pk);
@@ -785,10 +785,11 @@ class TCTData {
         for(const effect of issueEffects) {
             osegEffects.push({
                 answerEffectType: "TctIssue",
-                candidateId: -1,
+                candidateId: playableCandidatePk,
                 issueId: effect.fields.issue,
                 stateId: -1,
-                amount: effect.fields.issue_score
+                amount: effect.fields.issue_score,
+                weight: effect.fields.issue_importance
             });
         }
 
@@ -826,7 +827,7 @@ class TCTData {
                 id: answer.pk,
                 description: answer.fields.description,
                 feedback: fdbk,
-                answerEffects: this.answerEffectsAsOseg(answer)
+                answerEffects: this.answerEffectsAsOseg(answer, playableCandidatePk)
             }
         });
     }
